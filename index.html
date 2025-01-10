@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Euchre Tournament Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Euchre Tournament Manager</h1>
+        
+        <div class="setup-section">
+            <h2>Tournament Setup</h2>
+            <div class="input-group">
+                <div class="form-group">
+                    <label for="numPlayers">Number of Players:</label>
+                    <input type="number" id="numPlayers" min="4" value="8" step="1">
+                </div>
+                
+                <div class="form-group">
+                    <label for="numTables">Number of Tables:</label>
+                    <input type="number" id="numTables" min="1" value="2">
+                </div>
+                
+                <div class="form-group">
+                    <label for="maxGames">Maximum Number of Games:</label>
+                    <input type="number" id="maxGames" min="1" value="5">
+                </div>
+
+                <div class="form-group">
+                    <label for="entryFee">Entry Fee ($):</label>
+                    <input type="number" id="entryFee" min="0" step="0.50" value="0">
+                </div>
+            </div>
+            
+            <div class="podium-display">
+                <h3>Tournament Leaders</h3>
+                <div class="podium-container">
+                    <div class="podium-spot second">
+                        <div class="player-info">
+                            <div class="crown">2nd</div>
+                            <div class="player-number">--</div>
+                            <div class="prize">$0</div>
+                        </div>
+                        <div class="podium-block"></div>
+                    </div>
+                    <div class="podium-spot first">
+                        <div class="player-info">
+                            <div class="crown">1st</div>
+                            <div class="player-number">--</div>
+                            <div class="prize">$0</div>
+                        </div>
+                        <div class="podium-block"></div>
+                    </div>
+                    <div class="podium-spot third">
+                        <div class="player-info">
+                            <div class="crown">3rd</div>
+                            <div class="player-number">--</div>
+                            <div class="prize">$0</div>
+                        </div>
+                        <div class="podium-block"></div>
+                    </div>
+                    <div class="podium-spot fourth">
+                        <div class="player-info">
+                            <div class="crown">4th</div>
+                            <div class="player-number">--</div>
+                            <div class="prize">$0</div>
+                        </div>
+                        <div class="podium-block"></div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="generateBtn" class="primary-btn">Generate Tournament</button>
+            <button id="resetBtn" class="secondary-btn">Reset Tournament</button>
+            <button id="printScheduleBtn" class="secondary-btn">Print Schedule</button>
+        </div>
+
+        <div id="errorDisplay" class="error-message"></div>
+
+        <div id="tournamentDisplay" class="tournament-section">
+            <h2>Tournament Schedule</h2>
+            <div id="roundsContainer"></div>
+        </div>
+
+        <div id="statsDisplay" class="stats-section">
+            <h2>Tournament Leaderboard</h2>
+            <div id="leaderboardContainer"></div>
+        </div>
+
+        <button id="printResultsBtn" class="secondary-btn">Print Results</button>
+        <button id="printTableCardsBtn" class="secondary-btn">Print Table Cards</button>
+        <!-- Replace the export button with this -->
+    </div>
+
+    
+    <script src="tournament.js"></script>
+</body>
+</html>

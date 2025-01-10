@@ -1,0 +1,429 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --background-color: #ecf0f1;
+    --text-color: #2c3e50;
+    --card-background: #ffffff;
+    --border-color: #bdc3c7;
+    --success-color: #27ae60;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.setup-section {
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+textarea, input {
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.primary-btn {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.secondary-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.error-message {
+    background-color: #fee;
+    color: var(--accent-color);
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+    display: none;
+}
+
+.tournament-section {
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.round-card {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.table-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.table-card {
+    background: var(--background-color);
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.table-card h4 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.team {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    background: white;
+    border-radius: 4px;
+}
+
+.stats-section {
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.player-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.player-card {
+    background: var(--background-color);
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.partnership-matrix {
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+.partnership-matrix table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.partnership-matrix th,
+.partnership-matrix td {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.partnership-matrix th {
+    background: var(--background-color);
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .input-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .table-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Add to existing CSS */
+.pot-calculator {
+    background: var(--card-background);
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+.pot-results {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: var(--background-color);
+    border-radius: 4px;
+}
+
+.pot-results div {
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+
+.scoring-section {
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.game-score-entry {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.winners-input {
+    padding: 1rem;
+    background: var(--background-color);
+    border-radius: 4px;
+}
+
+.team-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.standings-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.standings-table th,
+.standings-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.standings-table tr:nth-child(even) {
+    background: var(--background-color);
+}
+
+/* Add these to your existing CSS */
+.score-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.win-button {
+    background-color: var(--success-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.win-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.leaderboard {
+    margin-top: 2rem;
+    background: var(--card-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.leaderboard table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.leaderboard th,
+.leaderboard td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.leaderboard th {
+    background-color: var(--background-color);
+    font-weight: bold;
+}
+
+.leaderboard tr:nth-child(even) {
+    background-color: var(--background-color);
+}
+
+.team.winner {
+    background-color: #d4edda;
+    border-left: 4px solid var(--success-color);
+}
+.unplayed {
+    background-color: #fff3e0;
+    border-left: 4px solid #ffa726;
+}
+
+.undo-button {
+    background-color: var(--accent-color);
+    margin-left: 1rem;
+}
+
+.player-games {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+@media print {
+    .round-card {
+        break-inside: avoid;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+
+    .table-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Show 2 tables per row when printing */
+        gap: 10px;
+    }
+
+    .table-card {
+        padding: 5px;
+        font-size: 12px; /* Smaller font for printing */
+    }
+
+    h1 { font-size: 24px; }
+    h2 { font-size: 20px; }
+    h3 { font-size: 16px; }
+    h4 { font-size: 14px; }
+
+    /* Hide unnecessary elements when printing */
+    .setup-section,
+    .score-buttons,
+    #printBtn,
+    #resetBtn,
+    #generateBtn {
+        display: none !important;
+    }
+}
+.podium-display {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.podium-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 2rem;
+    height: 200px;
+}
+
+.podium-spot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+}
+
+.player-info {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.crown {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.player-number {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.prize {
+    color: var(--success-color);
+    font-weight: bold;
+}
+
+.podium-block {
+    width: 100%;
+    background-color: var(--primary-color);
+    border-radius: 4px 4px 0 0;
+}
+
+.first .podium-block { height: 120px; background-color: #ffd700; }
+.second .podium-block { height: 90px; background-color: #c0c0c0; }
+.third .podium-block { height: 60px; background-color: #cd7f32; }
+.fourth .podium-block { height: 40px; }
